@@ -289,6 +289,30 @@
        </div>
 	</div>
 
+	<form id="test-form">
+
+		<div>
+			<label>Name</label>
+			<input type="text" name="name" placeholder="Ваше имя"/>
+		</div>
+
+		<div>
+			<label>Email</label>
+			<input type="text" name="email" placeholder="Ваш адрес электронной почты"/>
+		</div>
+
+		<div>
+			<label>Message</label>
+			<input type="text" name="message" placeholder="Ваше сообщение"/>
+		</div>
+
+
+		<div>
+			<button type="submit"id="submit-form">Submit</button>
+		</div>
+
+	</form>
+
 	<footer id="fh5co-footer">
 
 		<div class="container">
@@ -320,10 +344,29 @@
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<!-- Salvattore -->
 	<script src="js/salvattore.min.js"></script>
+	<!-- Serialize -->
+	<script src="js/jquery.serialize-object.min.js"></script>
 	<!-- Main JS -->
 	<script src="js/main.js"></script>
 
+	<script>
 
+var $form = $('form#test-form'),
+    url = 'https://script.google.com/macros/u/0/s/AKfycbyQl7xcxS_epg7zsV_Od5DOD_5ALf9_R-p3HtAL16pFiCT8Vp-g/exec'
+
+$('#submit-form').on('click', function(e) {
+  e.preventDefault();
+  var jqxhr = $.ajax({
+		jcrossDomain: true,
+    url: url,
+    method: "GET",
+    dataType: "json",
+    data: $form.serializeObject()
+  }).success(
+    // do something
+  );
+})
+	</script>
 
 
 	</body>
