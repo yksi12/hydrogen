@@ -14,9 +14,13 @@
 
     $('#count').bind('click',function(e){
 
+      var year = (new Date()).getFullYear();
+      var res = Math.round((year - $('#hseyear').val())/(year - $('#birthyear').val())*100);
 
+      //alert(res);
 
-      alert('Нажали');
+      $('#result').text(res);
+      $('#divres').css('display','block');
     });
 
 
@@ -28,6 +32,8 @@
     margin-left: 30px;
   }
   label { font-size: 2em; }
+
+  #divres { font-size: 3em; }
 </style>
 
 </head>
@@ -47,6 +53,9 @@
     </form>
   </div>
 
+  <div style="display: none" id="divres">
+    <p>Вы с Вышкой <span id="result"></span>% своей жизни!</p>
+  </div>
 
 </body>
 </html>
