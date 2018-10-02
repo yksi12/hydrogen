@@ -1,0 +1,78 @@
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Пример применения JS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    #result
+    { display: none; }
+  </style>
+
+
+	<script src="js/jquery.min.js"></script>
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+
+    $('#hseform button').bind('click',function(e){
+      var prcnt;
+      var cyear = new Date();
+      prcnt = Math.round((cyear.getFullYear() - $('#hseyear').val())/(cyear.getFullYear() - $('#birthyear').val())*100)
+      $('#hseprcnt').text(prcnt);
+      $('#form').css('display','none');
+      $('#result').css('display','block');
+    });
+
+    }
+  )
+</script>
+
+<script>
+  function again(){
+    $('#form').css('display','block');
+    $('#result').css('display','none');
+  }
+</script>
+
+</head>
+<body>
+
+  <div id="form">
+
+    <form id="hseform" action="#" enctype="text/plain">
+      <fieldset>
+        <label>Как долго вы уже с Вышкой?</label>
+        <p>
+            <label for="birthyear">В каком году вы родились?</label>
+            <select id="birthyear" size=1>
+              <option>1970</option>
+              <option>1971</option>
+              <option>1972</option>
+              <option>1973</option>
+              <option>1974</option>
+              <option>1975</option>
+              <option>1976</option>
+            </select>
+        </p>
+        <p>
+            <label for="hseyear">В каком году Вы поступили в Вышку?</label>
+            <input type="text" id="hseyear">
+        </p>
+        <button type="submit">Отправить</button>
+      </fieldset>
+    </form>
+  </p>
+
+  </div>
+
+  <div id="result">
+    <p>Вы связаны с Вышкой всего <span id="hseprcnt"></span> процентов своей жизни!</p>
+    <p>Поделиться:</p>
+    <button onclick="again()">Рассчитать ещё раз</button>
+  </div>
+
+
+</body>
+</html>

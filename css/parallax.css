@@ -1,0 +1,91 @@
+body
+{
+  width: 100%;
+  height: 100%;
+  font-family: "Droid Sans", arial, verdana, sans-serif;
+  font-weight: 700;
+  color: #ff6;
+  background-color: #000;
+  /* overflow: hidden; */
+  margin: 0;
+  padding: 0;
+}
+#titles p.center {
+  text-align: center;
+}
+.space {
+  background: url("../images/stars.jpg") no-repeat fixed;
+  width: 100%;
+  height: 200%;
+  margin: 0 auto;
+  padding: 0;
+  z-index: 0;
+}
+#tatooine {
+  background: url("../images/tatooine.png") no-repeat;
+  position: absolute;
+  top: 800px;
+  left: 200px;
+  z-index: 10;
+  width: 256px;
+  height: 100%;
+}
+#moon {
+  background: url("../images/moon.png") no-repeat;
+  position: absolute;
+  top: 100%;
+  left: 60%;
+  z-index: 10;
+  background-size: 100px 100px;
+  width: 100px;
+  height: 100%;
+}
+#falcon {
+  background: url("../images/MillenniumFalcon.png") no-repeat;
+  background-size: 50%;
+  position: absolute;
+  overflow: hidden;
+  top: 100%;
+  left: 80%;
+  z-index: 20;
+  width: 256px;
+  height: 100%;
+}
+#titles
+{
+  position: absolute;
+  width: 18em;
+  height: 50em;
+  bottom: 0;
+  left: 50%;
+  margin-left: -9em;
+  font-size: 350%;
+  font-weight: bold;
+  text-align: justify;
+  z-index: 10;
+  overflow: hidden;
+  transform-origin: 50% 100%;
+  transform: perspective(300px) rotateX(25deg);
+}
+#titles:after
+{
+  position: absolute;
+  content: ' ';
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 60%;
+  background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+  pointer-events: none;
+}
+#titlecontent
+{
+  position: absolute;
+  top: 100%;
+  animation: scroll 100s linear 1s infinite;
+}
+
+@keyframes scroll {
+  0% { top: 100%; }
+  100% { top: -170%; }
+}

@@ -1,0 +1,61 @@
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Сколько лет вы в Вышке</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="js/jquery.min.js"></script>
+
+  <link href="css/parallax.css" rel="stylesheet">
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+
+    $('#count').bind('click',function(e){
+
+      var year = (new Date()).getFullYear();
+      var res = Math.round((year - $('#hseyear').val())/(year - $('#birthyear').val())*100);
+
+      //alert(res);
+
+      $('#result').text(res);
+      $('#divres').css('display','block');
+    });
+
+
+  })
+</script>
+
+<style>
+  input, button { font-size: 3em;
+    margin-left: 30px;
+  }
+  label { font-size: 2em; }
+
+  #divres { font-size: 3em; }
+</style>
+
+</head>
+<body>
+  <div class="game">
+    <h1>Узнайте, какой процент Вашей жизни связан с Вышкой</h1>
+    <form action="#">
+      <p>
+        <label for="birthyear">Когда Вы родились?</label>
+        <input type="text" name="birthyear" id="birthyear">
+      </p>
+      <p>
+        <label for="hseyear">Когда Вы решили поступить в Вышку?</label>
+        <input type="text" name="hseyear" id="hseyear">
+      </p>
+      <button id="count">Узнать</button>
+    </form>
+  </div>
+
+  <div style="display: none" id="divres">
+    <p>Вы с Вышкой <span id="result"></span>% своей жизни!</p>
+  </div>
+
+</body>
+</html>
