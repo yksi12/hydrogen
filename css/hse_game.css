@@ -26,14 +26,17 @@
     border-radius: 4px;
 }
 
+.btn_block {
+  width: 100%;
+  text-align: center;
+}
+
 .btn_calc {
   font-family: Proxima Nova;
     font-size: 18px;
     font-weight: 500;
     line-height: 1;
-    position: absolute;
     margin-right: 14px;
-    right: 0;
     z-index: 0;
     display: inline-block;
     min-width: 120px;
